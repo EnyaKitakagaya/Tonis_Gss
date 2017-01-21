@@ -135,5 +135,3 @@ while (True):
         oled.write_word("Invalid card !!")
         os.system("aplay " + horn + " &") 
     time.sleep(2)
-
-pi@raspberrypi:/usr/local/bin/Tonis $ 
