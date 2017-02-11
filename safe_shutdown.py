@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-
+# このスクリプトは、http://denshikousaku.net/put-shutdown-and-reboot-button-on-raspberry-pi
+# を参考にしました（ほとんど同じです）。
 # このスクリプトは、/etc/rc.local に次の２行を追加して自動起動されるべき。
 # /usr/bin/python /home/pi/Tonis_Gss/safe_shutdown.py &
 # /usr/bin/python /home/pi/Tonis_Gss/startup.py &
