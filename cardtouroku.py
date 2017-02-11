@@ -22,14 +22,15 @@ userid_col_no = 0 # 会員番号のカラム番号（ゼロから始まる）
 felicaid_col_no = 1 # FelicaIDのカラム番号（ゼロから始まる）
 
 jsonkey = "/home/pi/Tonis-0674cbe9d8cc.json" # シートをアクセスするための認証キー
-bell = "/usr/local/bin/Tonis/bell.wav"
+#bell = "/usr/local/bin/Tonis/bell.wav"
+beep = "/usr/local/bin/Tonis/beep.py"
 
 # フェリカカードを読んだとき実行
 def getid(tag):
     global id
     a = '%s' % tag
     id = "#" + re.findall("ID=([0-9A-F]*)",a)[0]
-    os.system("aplay " + bell + " &") 
+    os.system("python " + beep + " &") 
 
 clf = nfc.ContactlessFrontend('usb')
 
