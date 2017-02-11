@@ -23,7 +23,7 @@ felicaid_col_no = 1 # FelicaIDのカラム番号（ゼロから始まる）
 
 jsonkey = "/home/pi/Tonis-0674cbe9d8cc.json" # シートをアクセスするための認証キー
 #bell = "/usr/local/bin/Tonis/bell.wav"
-beep = "/usr/local/bin/Tonis/beep.py"
+beep = "/usr/home/pi/Tonis_Gss/beep.py"
 
 # フェリカカードを読んだとき実行
 def getid(tag):
