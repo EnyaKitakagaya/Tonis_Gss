@@ -1,6 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-
+# このスクリプトは、/etc/rc.local に次の２行を追加して自動起動されるべき。
+# /usr/bin/python /home/pi/Tonis_Gss/safe_shutdown.py &
+# /usr/bin/python /home/pi/Tonis_Gss/startup.py &
+#
 import RPi.GPIO as GPIO
 import time
 import os
