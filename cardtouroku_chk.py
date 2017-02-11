@@ -51,6 +51,14 @@ while (True):
     # フェリカカード読み込み
     clf.connect(rdwr={'on-connect': getid})
     cardid = id
+    # google スプレッドシートのアクセス認証（一定期間アクセス無いと切れてしまうので、毎回認証する）
+    json_key = json.load(open(jsonkey))
+    scope = ['https://spreadsheets.google.com/feeds']
+    credentials = oauth2client.client.SignedJwtAssertionCredentials(json_key['client_email'], json_key['private_key'].encode(), scope)
+    gc = gspread.authorize(credentials)
+    # google スプレッドシートをオープン
+    wb = gc.open(wb_name) # ワークブックをオープン 
+    test1 = wb.worksheet(master_sheet_name) # 会員マスターシートをオープン
     master = np.array(test1.get_all_values())
     try:
         hit_row_number = np.where(master == id)[0][0] # フェリカIDでマスターシートを検索
@@ -62,4 +70,3 @@ while (True):
         oled.clear()
         oled.write_word("Not Registered!!")
     time.sleep(2)
-    

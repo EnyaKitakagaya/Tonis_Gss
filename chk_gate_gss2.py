@@ -13,8 +13,10 @@ import time
 import datetime as dt
 import numpy as np
 
-bell="/usr/local/bin/Tonis/bell.wav"
-horn="/usr/local/bin/Tonis/horn.wav"
+#bell="/usr/local/bin/Tonis/bell.wav"
+#horn="/usr/local/bin/Tonis/horn.wav"
+beep = "/usr/local/bin/Tonis/beep.py"
+warnbeep = "/usr/local/bin/Tonis/warnbeep.py"
 
 # グーグルシートの定義
 jsonkey = "/home/pi/Tonis-0674cbe9d8cc.json" # シートをアクセスするための認証キー
@@ -57,8 +59,7 @@ def getid(tag):
     global id
     a = '%s' % tag
     id = "#" + re.findall("ID=([0-9A-F]*)",a)[0]
-    os.system("aplay " + bell + " &") 
-
+    os.system("python " + beep + " &")
 clf = nfc.ContactlessFrontend('usb')
 
 oled = loled.oled(0)
@@ -98,7 +99,7 @@ while (True):
             oled.clear()
             oled.write_word("Kigen Gire or Shikkou!!")
             oled.write_word(" " + valid_to + "  made")
-            os.system("aplay " + horn + " &") 
+            os.system("python " + warnbeep + " &")
         else:
             all_log = np.array(dummy.get_all_values())
             hit_row_array = np.where(all_log == userid)
@@ -133,5 +134,6 @@ while (True):
         #print "Invalid card 2!!"
         oled.clear()
         oled.write_word("Invalid card !!")
-        os.system("aplay " + horn + " &") 
+        os.system("python " + warnbeep + " &")
     time.sleep(2)
+

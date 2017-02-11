@@ -31,3 +31,4 @@ class oled:
         time.sleep(0.001)
         bus.write_byte_data(self.addr,0,0x20)
 
+
