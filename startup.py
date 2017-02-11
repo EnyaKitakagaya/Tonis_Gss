@@ -18,11 +18,11 @@ sw2 = not GPIO.input(26)
 
 
 if (sw1==True and sw2==False):
-    os.system("/usr/bin/python /usr/local/bin/Tonis/cardtouroku.py")
+    os.system("/usr/bin/python /home/pi/Tonis_Gss/cardtouroku.py")
 elif(sw1==True and sw2==True):
-    os.system("/usr/bin/python /usr/local/bin/Tonis/cardtouroku_chk.py")
+    os.system("/usr/bin/python /home/pi/Tonis_Gss/cardtouroku_chk.py")
 elif(sw1==False and sw2==False):
-    os.system("/usr/bin/python /usr/local/bin/Tonis/chk_gate_gss2.py")
+    os.system("/usr/bin/python /home/pi/Tonis_Gss/chk_gate_gss2.py")
 else:
     oled = loled.oled(0)
     oled.write_word("Maintenance mode.")
