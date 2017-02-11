@@ -15,8 +15,8 @@ import numpy as np
 
 #bell="/usr/local/bin/Tonis/bell.wav"
 #horn="/usr/local/bin/Tonis/horn.wav"
-beep = "/usr/local/bin/Tonis/beep.py"
-warnbeep = "/usr/local/bin/Tonis/warnbeep.py"
+beep = "/home/pi/Tonis_Gss/beep.py"
+warnbeep = "/home/pi/Tonis_Gss/warnbeep.py"
 
 # グーグルシートの定義
 jsonkey = "/home/pi/Tonis-0674cbe9d8cc.json" # シートをアクセスするための認証キー
